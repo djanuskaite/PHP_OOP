@@ -12,4 +12,16 @@ class Student extends User
 
         $this->average = $average;
     }
+
+    public function getUserData()
+    {
+        return
+            $userData = [
+                $this->name,
+                $this->email,
+                $this->role,
+                $this->description,
+                $this->average,
+                ];
+    }
 }
