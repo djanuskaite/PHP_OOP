@@ -1,31 +1,17 @@
 <?php
 namespace Users;
 //klase naudojant konstruktoriu
-class User
+abstract class User
 {
     protected $name;
     protected $email;
     protected $role;
     protected $description;
 
-    public $userData = [];
 
-    public function __construct($name,$email,$role){
-        $this->name=$name;
-        $this->email=$email;
-        $this->role=$role;
-    }
-    public function addDescription($description){
-        $this->description=$description;
-    }
-    public function getUserData()
-    {
-        $this->userData [] = $this->name;
-        $this->userData [] = $this->email;
-        $this->userData [] = $this->role;
-        $this->userData [] = $this->description;
-        return $this->userData;
-    }
+    abstract public function addDescription($description);
+    abstract public function getUserData();
+
     //taip apsiraso destruktorius, jis nera praktiskai naudojamas, nes ir taip kai isspausdini jis issitrina
     /* function __destruct(){
          echo"Objekto gyvenimas baigesi";
